@@ -1,10 +1,4 @@
 
-
-After('@logout')do
-find(:css, 'input[class="user-logado"]').click
-click_link '/logout'
-end
-
 After do |scenario|
 nome_cenario = scenario.name.gsub(/[^A-Za-z0-9 ]/, '')
 nome_cenario = nome_cenario.gsub(' ', '_').downcase!

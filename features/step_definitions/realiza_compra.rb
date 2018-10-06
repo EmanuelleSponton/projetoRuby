@@ -15,7 +15,7 @@ Quando("seleciono o produto") do
 end
 
 Quando("eu clico em Compre") do
-  @compra = RealizaCompra.new
+  @compra = Carrinho.new
   @compra.load
   @compra.deve_adicionar_item_carrinho
 end
@@ -29,7 +29,7 @@ Quando("eu possuo um produto no meu carrinho") do |table|
   @ConsultaPage = ConsultaPage.new
   @ConsultaPage.deve_pesquisar_produto('batom')
 
-  @compra = RealizaCompra.new
+  @compra = Carrinho.new
   @compra.load
   @compra.deve_adicionar_item_carrinho
 end
@@ -39,12 +39,12 @@ Quando("seleciono a opcao de pagamento Cartao de Credito") do
 end
 
 Quando("eu removo o item do carrinho") do
-  @remover_item_carrinho = RealizaCompra.new
+  @remover_item_carrinho = Carrinho.new
   @remover_item_carrinho.deve_remover_item_carrinho
 end
 
 Quando("preencho os campos numero de cartao e CPF com valores invalidos") do
-  @tentativa_forma_pgto = FormaPagamento.new
+  @tentativa_forma_pgto = Pagamento.new
   @tentativa_forma_pgto.tentativa_forma_pagamento
 end
 
@@ -62,7 +62,7 @@ Entao("eu deverei possuir dois produtos no meu carrinho") do
 end
 
 Entao("eu devo conseguir preencher os dados do cartao de credito") do
-  @forma_pgto = FormaPagamento.new
+  @forma_pgto = Pagamento.new
   @forma_pgto.load
   @forma_pgto.selecionar_forma_pgto_credito
 end
