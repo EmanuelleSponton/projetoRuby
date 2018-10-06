@@ -7,11 +7,16 @@ class RealizaCompra < SitePrism::Page
     element :qtd_cupom, 'input[name="qtd-plus"]'
  
  
-     def adicionar_item_carrinho
+     def deve_adicionar_item_carrinho
        botao_compre.click
     end 
 
-     def aumentar_qtd_produto
+     def deve_aumentar_qtd_produto
         find('.qtd-plus', :text => "+").click
+    end
+
+    def deve_remover_item_carrinho
+        find(:css, 'a[title="Remover"]').click
+        find(:css, 'a[class="modalConfirmRemoveCart-remove"]').click
     end
 end

@@ -5,11 +5,8 @@ class ConsultaPage < SitePrism::Page
     element :botao_pesquisa, 'input[class="search-box"]'
  
  
-     def pesquisar(produto)
+     def deve_pesquisar_produto(produto)
         pesquisa_produto.set produto
         find(:css, 'input[name="q"]').native.send_keys(:return)
-        #find(:xpath, "//*[@id=\"deals-div\"]/div/div[3]/div[1]/figure/a/div[1]/div[1]/img").click
-        
-
      end
  end 

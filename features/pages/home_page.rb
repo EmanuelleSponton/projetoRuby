@@ -6,7 +6,7 @@ class HomePage < SitePrism::Page
    element :botao_logar, '#btn-login'
 
 
-    def logar
+    def deve_realizar_login
         campo_email.set 'usuarioteste775333@gmail.com'
         campo_senha.set '@XFGS117882!'
         botao_logar.click
